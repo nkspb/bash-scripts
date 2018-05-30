@@ -1,0 +1,9 @@
+#!/bin/bash
+
+while read line; do
+  if grep "$line" text.txt > /dev/null
+  then
+    echo "FOUND $line in file"
+    sed -e "s/$line//gi" "text.txt" > output_file; mv output_file "text.txt"
+  fi
+done < badwords
