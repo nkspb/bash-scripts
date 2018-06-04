@@ -1,9 +1,32 @@
 #!/bin/bash
+# remove_words
+# By Nikolay Komolov
+# https://github.com/nkspb/bash_scripts
 
-while read line; do
-  if grep "$line" text.txt > /dev/null
+# Remove certain words from a file
+
+# Define exit codes
+SUCCESS=0
+E_NOARGS=65
+
+# Check if arguments are supplied
+if [ -z "$1" ] || [ -z "$2" ]; then
+    echo "Usage: `basename $0` dict text"
+    exit $E_NOARGS
+fi
+
+# Itterate through words in a dict supplied as 1st arg
+while read word; do
+  # Look for 'word' in a file
+  # But do not output grep
+  if grep "$word" "$2" > /dev/null
   then
-    echo "FOUND $line in file"
-    sed -e "s/$line//gi" "text.txt" > output_file; mv output_file "text.txt"
+    # Inform if a word was found
+    echo "FOUND $word in file"
+    # Remove the word from the text
+    # Use sed to replace them with whitespace and tr to remove extra spaces
+    sed -e "s/$word//gi" "text.txt" | tr -s " " > output_file; mv output_file "$2"
   fi
-done < badwords
+done < "$1"
+
+exit $SUCCESS
