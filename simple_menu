@@ -1,0 +1,30 @@
+#!/bin/bash
+# simple_menu
+# By Nikolay Komolov
+# https://github.com/nkspb/bash_scripts
+
+while true; do
+  echo -e "Welcome to Menu!\nMake a choice: "
+  echo "1) Start app"
+  echo "2) Options"
+  echo "3) Exit"
+
+  read -p "-> " response
+  
+  if [[ $response == 2 ]] ; then
+    while true; do
+      select choice in "Improve Graphics" "Improve Sound" "Back to Menu"; do
+        case $choice in
+          "Improve Graphics")  echo "Graphics has been improved :)" ;;
+          "Improve Sound") echo "Sound is now awesome" ;; 
+          "Back to Menu") break 2 ;;
+          *) echo "Incorrect option, try again"
+	esac
+      done
+    done
+  fi
+  if [[ $response == 3 ]] ; then
+    echo "Have a Nice Day!"
+    exit 0
+  fi
+done
