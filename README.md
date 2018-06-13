@@ -7,4 +7,5 @@ find_files_in_dirs.sh - <strong>Find executable files ending in calc</strong><br
 test_variables.sh - <strong>Check if variables are set, using :</strong><br>
 rpm-check.sh - <strong>Query an rpm file for its description, listing and whether it can be installed</strong><br>
 remove_words - <strong>Remove words from a file, using another file as the source of words to delete.</strong><br>
-simple_menu - <strong>A simple nested menu</strong>
+simple_menu - <strong>A simple nested menu</strong><br>
+calc - <strong>A simple calculator</strong>
