@@ -1,0 +1,22 @@
+#!/bin/bash
+# batch_renaming
+# Rename files sequentially in a folder 
+#+ given as an argument
+# By Nikolay Komolov
+# 06/14/18
+# https://github.com/nkspb
+
+
+folder=$1
+cd $folder
+# Count is appended to the end of a file
+count=0
+# Itterate through each item in directory (1 level deep)
+for file in *; do
+  count=$((count + 1))
+  # Check if an item is a regular file
+  if [[ -f $file ]]; then
+    # Rename file
+    mv $file file${count}
+  fi
+done
