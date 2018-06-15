@@ -1,0 +1,21 @@
+#!/bin/bash
+# factorial
+# Calculate factorial of a number
+# By Nikolay Komolov
+# https://github.com/nkspb
+
+if [[ -z $1 ]]; then
+  echo "Usage: $0 <num>"
+  exit 1
+fi
+
+n=$1
+factorial=1
+j=1
+
+while [[ $j -le $n ]]; do
+  factorial=$(( $factorial * $j ))
+  j=$(($j + 1))
+done
+echo The factorial of $n, "$n"'!' = $factorial
+exit 0
