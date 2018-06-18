@@ -10,4 +10,5 @@ remove_words - <strong>Remove words from a file, using another file as the sourc
 simple_menu - <strong>A simple nested menu</strong><br>
 calc - <strong>A simple calculator</strong><br>
 batch_renaming - <strong>Rename all files in a directory in a certain way</strong><br>
-factorial - <strong>Calculate factorial of a number</strong>
+factorial - <strong>Calculate factorial of a number</strong><br>
+image_batch_resize - <strong>Resize images in a directory</strong>
